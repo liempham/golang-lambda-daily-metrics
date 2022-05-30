@@ -77,7 +77,6 @@ func getReport() {
 		log.Fatal(err)
 	}
 
-	// resp, err := http.Post(apiHost, "application/json", bytes.NewBuffer(json_data))
 	req, _ := http.NewRequest("POST", apiHost, bytes.NewBuffer(json_data))
 
 	req.Header.Add("Authorization", bearer)

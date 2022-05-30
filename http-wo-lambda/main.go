@@ -73,7 +73,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// resp, err := http.Post(apiHost, "application/json", bytes.NewBuffer(json_data))
 	req, _ := http.NewRequest("POST", apiHost, bytes.NewBuffer(json_data))
 
 	req.Header.Add("Authorization", bearer)
@@ -125,23 +124,3 @@ func main() {
 		log.Fatal(err)
 	}
 }
-
-// PrettyPrint to print struct in a readable way
-// func PrettyPrint(i interface{}) string {
-// 	s, _ := json.MarshalIndent(i, "", "\t")
-// 	return string(s)
-// }
-
-// func postSlack(slackChannel string, body []byte) {
-// 	req, _ := http.NewRequest("POST", slackChannel, bytes.NewBuffer(body))
-// 	req.Header.Add("Content-Type", "application/json")
-// 	// log.Printf("req.Body: %v\n", req.Body)
-
-// 	client := &http.Client{}
-// 	resp, err := client.Do(req)
-
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
-// 	defer resp.Body.Close()
-// }
